@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let firstName,
+            lastName,
+            surname,
+            age,
+            age_days,
+            gender,
+            pensionable_age;
+        firstName = prompt('Введите ваше имя', 'Петр');
+        lastName = prompt('Введите вашу фамилию', 'Петров');
+        surname = prompt('Введите ваше отчество', 'Петрович');
+        age = parseInt(prompt('Введите ваш возраст, лет', '20'));
+        gender = confirm('Ваш пол мужской?\n("Оk" - мужской, "Отмена" - женский)')
+        age_days = age * 365;
+        if (gender == true) {
+            gender = 'мужской';
+            if( age >= 63) {
+                pensionable_age = 'да';
+            } else pensionable_age = 'нет';
+        } else if( gender == false) {
+            gender = 'женский';
+            if( age >= 58) {
+                pensionable_age = 'да';
+            } else pensionable_age = 'нет';
+        }
+        alert("ФИО: " + lastName + " " + firstName + " " + surname + "\n" +
+              "возраст, лет: " + age + "\n" +
+              "возраст, дней: " + age_days  + "\n" +
+              "через 5 лет вам будет: " + (age + 5) + "\n" +
+              "пол: " + gender + "\n" +
+              "пенсионный возраст: " + pensionable_age);
+    </script>
+</body>
+</html>
