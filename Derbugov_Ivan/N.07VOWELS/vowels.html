@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let str
+        function validStr () {
+            str = prompt('Введите строку или подтвердите имеющуюся', 'в ЭТОЙ строке 6 гласных')
+            if (str === '' || str === null) validStr ()
+        }
+        validStr()
+
+        const arrStr = str.toLowerCase().split('')
+        // console.log('--arrStr', arrStr)
+
+        let countVowels = 0
+        for (let val of arrStr) {
+            if (val === 'а' || val === 'е' || val === 'ё' || val === 'и' || val === 'о' || val === 'у' || val === 'ы' || val === 'э' || val === 'ю' || val === 'я') countVowels++  
+        }
+        console.log('--Гласных в строке:', countVowels)
+    </script>
+
+
+
+<!-- подсчет времени выполнения -->
+
+<!-- <script>
+    let str
+    function validStr () {
+        str = prompt('Введите строку или подтвердите имеющуюся', 'в ЭТОЙ строке 6 гласных')
+        if (str === '' || str === null) validStr ()
+    }
+    validStr()
+
+    const arrStr = str.toLowerCase().split('')
+    // console.log('--arrStr', arrStr)
+
+    // Запускаем операцию много раз для точного измерения
+    const iterations = 10000
+    let countVowels = 0
+    
+    // Засекаем время начала
+    const startTime = Date.now()
+    
+    // Выполняем подсчёт много раз
+    for (let i = 0; i < iterations; i++) {
+        countVowels = 0
+        for (let val of arrStr) {
+            if (val === 'а' || val === 'е' || val === 'ё' || val === 'и' || val === 'о' || val === 'у' || val === 'ы' || val === 'э' || val === 'ю' || val === 'я') countVowels++  
+        }
+    }
+    
+    // Засекаем время окончания
+    const endTime = Date.now()
+    const totalTime = endTime - startTime
+    const avgTime = totalTime / iterations
+    
+    console.log('--Гласных в строке:', countVowels)
+    console.log('--Итераций:', iterations)
+    console.log('--Общее время:', totalTime, 'миллисекунд')
+    console.log('--Среднее время за итерацию:', avgTime.toFixed(4), 'миллисекунд')
+</script> -->
+
+<!-- Отчёт о скорости метода (через множественные ||):
+    - Короткая строка (6 гласных): ~0.0009 мс за итерацию
+    - Длинная строка (26496 гласных): ~0.2291 мс за итерацию
+    - Тест: 10000 итераций
+-->
+
+</body>
+</html>
