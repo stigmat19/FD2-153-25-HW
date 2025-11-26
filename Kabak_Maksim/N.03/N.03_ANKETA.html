@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.03_ANKETA</title>
+</head>
+
+<body>
+    <script>
+        let secondnamee;
+        do {
+            secondnamee = prompt('Введите вашу фамилию');
+        } while (secondnamee === '');
+        let firstname;
+        do {
+            firstname = prompt('Введите ваше имя');
+        } while (firstname === '');
+        let surename;
+        do {
+            surename = prompt('Введите ваше отчество');
+        } while (surename === '');
+        let age;
+        do {
+            age = prompt('Введите ваш возрост в годах');
+        } while (age === '');
+        age = parseInt(age);
+        const gender = confirm('Ваш пол - мужской?');
+        const genderOut = (gender === true) ? 'мужской' : 'женский';
+        switch (genderOut) {
+            case 'мужской':
+                if (age < 63) {
+                    pension = 'нет';
+                }
+                else
+                    pension = 'да';
+                break;
+            case 'женский':
+                if (age < 58) {
+                    pension = 'нет';
+                }
+                else
+                    pension = 'да';
+                break;
+        }
+        alert('ваше ФИО: ' + secondnamee + ' ' + firstname + ' ' + surename +
+            '\nваш возрост в годах: ' + age +
+            '\nваш возрост в днях: ' + (age * 365) +
+            '\nчерез 5 лет вам будет: ' + (age + 5) +
+            '\nваш пол: ' + genderOut +
+            '\nвы на пенсии: ' + pension)
+    </script>
+</body>
+
+</html>
