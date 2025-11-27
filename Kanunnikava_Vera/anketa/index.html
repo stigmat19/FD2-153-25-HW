@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let lastname, firstname, patronymic, age;
+        while (!lastname) {
+            lastname = prompt("Введите вашу фамилию:");
+            if (!lastname) {
+                alert("Фамилия не может быть пустой!");
+            }
+        }
+
+        while (!firstname) {
+            firstname = prompt("Введите ваше имя:");
+            if (!firstname) {
+                alert("Имя не может быть пустым!");
+            }
+        }
+
+         while (!patronymic) {
+            patronymic = prompt("Введите ваше отчество:");
+            if (!patronymic) {
+                alert("Отчество не может быть пустым!");
+            }
+        }
+
+        while (true) {
+            age = parseInt(prompt("Введите ваш возраст:"));
+            
+            if (isNaN(age)) {
+                alert("Возраст должен быть числом! Попробуйте снова.");
+                continue;
+            }
+            
+            if (age < 0 || age > 150) {
+                alert("Возраст должен быть в диапазоне от 0 до 150 лет! Попробуйте снова.");
+                continue;
+            }
+            
+            break;
+        }
+        let isMale = confirm("Ваш пол — мужской?");
+        let gender = isMale ? "мужской" : "женский";
+
+        const ageInDays = age * 365;
+        const ageInFiveYears = age + 5;
+        const retired = (isMale && age >= 65) || (!isMale && age >= 60) ? "да" : "нет";
+        
+        alert (
+            "ваше ФИО: " + lastname + " " + firstname + " " + patronymic + "\n" +
+            "ваш возраст в годах: " + age + "\n" +
+            "ваш возраст в днях: " + ageInDays + "\n" +
+            "через 5 лет вам будет: " + ageInFiveYears + "\n" +
+            "ваш пол: " + gender + "\n" +
+            "вы на пенсии: " + retired
+        )
+
+    </script>
+</body>
+</html>
