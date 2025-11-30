@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Вариант с с использованием метода массива forEach
+
+      function countVowelsWithForEach(userStr) {
+        const vowels = "аеёиоуыэюя";
+        let count = 0;
+
+        userStr.split("").forEach((char) => {
+          if (vowels.includes(char.toLowerCase())) {
+            count++;
+          }
+        });
+
+        return count;
+      }
+
+      // Вариант с использованием метода массива filter
+
+      function countVowelsWithFilter(userStr) {
+        const vowels = "аеёиоуыэюя";
+
+        return userStr
+          .split("")
+          .filter((char) => vowels.includes(char.toLowerCase())).length;
+      }
+
+      // Вариант с с использованием метода массива reduce
+
+      function countVowelsWithReduce(userStr) {
+        const vowels = "аеёиоуыэюя";
+
+        return userStr
+          .split("")
+          .reduce((acc, char) => {
+            if (vowels.includes(char.toLowerCase())) {
+              acc++;
+            }
+            return acc;  
+          }, 0);
+      }
+
+      let input = prompt("Введите строку:");
+      let result1 = countVowelsWithForEach(input);
+      let result2 = countVowelsWithFilter(input);
+      let result3 = countVowelsWithReduce(input);
+
+      console.log(result1);
+      console.log(result2);
+      console.log(result3);
+      
+    </script>
+  </body>
+</html>
