@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script> 
+
+        const vowels = ['а','е','ё','и','о','у','ы','э','ю','я'];
+
+        function countVowelsForEach(str) {
+            let count = 0;
+            str.toLowerCase().split('').forEach(char => {
+                if (vowels.includes(char)) {
+                count++;
+                }
+            });
+
+            return count;
+        }
+
+        function countVowelsFilter(str){
+            let count = str.toLowerCase().split('').filter(char => vowels.includes(char)).length;
+            return count;
+        }
+
+        function countVowelsReduce(str){
+
+            let count = str.toLowerCase().split('').reduce((acc, char) => {
+                return acc + (vowels.includes(char) ? 1 : 0)
+            }, 0);
+
+            return count;
+
+        }
+        const input = prompt("Введите строку:");
+        console.log("Результат forEach:", countVowelsForEach(input));
+        console.log("Результат Filter:", countVowelsFilter(input));
+        console.log("Результат Reduce:", countVowelsReduce(input));
+    </script>
+</body>
+</html>
