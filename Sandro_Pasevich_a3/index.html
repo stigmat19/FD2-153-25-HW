@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const lastName = prompt("Введите вашу фамилию:");
+        const firstName = prompt("Введите ваше имя:");
+        const surName = prompt("Введите ваше отчество:");
+
+        if (!lastName || !firstName || !surName) {
+            alert("ФИО не должно быть пустым");
+        } else {
+            const ageInput = prompt("Введите ваш возраст в годах:");
+            const age = Number(ageInput);
+
+            if (!ageInput || isNaN(age) || age <= 0) {
+                alert("Возраст должен быть положительным числом");
+            } else {
+                const isMale = confirm("Ваш пол — мужской?");
+                const ageInDays = age * 365;
+                const agePlusFive = age + 5;
+
+                let genderText = isMale ? "мужской" : "женский";
+                let retired = "нет";
+
+                if ((isMale && age >= 63) || (!isMale && age >= 58)) {
+                    retired = "да";
+                }
+
+                alert(
+                    "ваше ФИО: " + lastName + " " + firstName + " " + surName + "\n" +
+                    "ваш возраст в годах: " + age + "\n" +
+                    "ваш возраст в днях: " + ageInDays + "\n" +
+                    "через 5 лет вам будет: " + agePlusFive + "\n" +
+                    "ваш пол: " + genderText + "\n" +
+                    "вы на пенсии: " + retired
+                );
+            }
+        }
+    </script>
+</body>
+
+</html>
