@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.07_VOWELS</title>
+</head>
+
+<body>
+    <script>
+        let s;
+        do {
+            s = prompt('введите строку');
+        } while (s === '');
+        function number_of_vowels(s) {
+            let sum = 0;
+            const vowels = 'АаЕеЁёИиОоУуЫыЭэЮюЯя';
+            for (let i = 0; i < s.length; i++) {
+                if (vowels.includes(s[i])) {
+                    sum += 1;
+                }
+            }
+            return sum
+        }
+        console.log(number_of_vowels(s));
+    </script>
+</body>
+
+</html>
