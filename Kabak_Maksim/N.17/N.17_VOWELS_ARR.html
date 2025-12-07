@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.17_VOWELS_ARR</title>
+</head>
+
+<body>
+    <script>
+        let s;
+        do {
+            s = prompt('введите строку');
+        } while (s === '');
+        const vowels = 'АаЕеЁёИиОоУуЫыЭэЮюЯя';
+        const s1 = s.split('');
+
+
+        function number_of_vowels1(s) {
+            let sum = 0;
+            s1.forEach((v) => {
+                if (vowels.includes(v)) {
+                    sum += 1;
+                }
+            });
+            return sum;
+        }
+        console.log('сумма от forEach: ', number_of_vowels1(s));
+
+
+        function number_of_vowels2(s) {
+            let sum = 0;
+            s1.filter((v) => {
+                if (vowels.includes(v)) {
+                    sum += 1;
+                }
+            });
+            return sum;
+        }
+        console.log('сумма от filter: ', number_of_vowels2(s));
+
+
+        function number_of_vowels3(s) {
+            return s1.reduce((acc, v) => {
+                if (vowels.includes(v)) {
+                    return acc + 1;
+                }
+                return acc;
+            }, 0);
+        }
+        console.log('сумма от reduce: ', number_of_vowels3(s));
+    </script>
+</body>
+
+</html>
