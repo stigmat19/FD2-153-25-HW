@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script> 
+
+        function countVowels (str){
+            let count = 0;
+            const vowels = ['а','е','ё','и','о','у','ы','э','ю','я'];
+            str = str.toLowerCase();
+
+            for (const char of str) {
+                if (vowels.includes(char)) {
+                    count++;
+                }
+            }
+            й
+            return count;
+        }
+
+        const input = prompt("Введите строку:");
+        console.log(countVowels(input ?? ""));
+
+    </script>
+</body>
+</html>
