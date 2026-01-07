@@ -25,28 +25,30 @@
     </button>
 
     <script>
-        function HashStorageFunc() {
-            const storage = {}
+        class HashStorageClass {
+            constructor() {
+                this.storage = {}
+            }
 
-            this.addValue = function (key, value) {
-                storage[key] = value
+            addValue(key, value) {
+                this.storage[key] = value
             }
-            this.getValue = function (key) {
-                return storage[key]
+            getValue(key) {
+                return this.storage[key]
             }
-            this.deleteValue = function (key) {
-                if (key in storage) {
-                    delete storage[key]
+            deleteValue(key) {
+                if (key in this.storage) {
+                    delete this.storage[key]
                     return true
                 }
                 return false
             }
-            this.getKeys = function () {
-                return Object.keys(storage)
+            getKeys() {
+                return Object.keys(this.storage)
             }
         }
 
-        const drinkStorage = new HashStorageFunc
+        const drinkStorage = new HashStorageClass
         
         function emptyStr() {
             let str = prompt('введите название нужного напитка')
