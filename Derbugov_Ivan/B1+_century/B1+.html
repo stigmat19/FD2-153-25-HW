@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getCentury (year) {
+        year = year
+        .toString()
+        .split('')
+        .filter((v) => v !== '0')
+        .join('')
+        .padEnd(4, '0')
+        
+        year = Math.ceil( Number(year) / 100 )
+
+        return year
+        }
+        console.log(getCentury(2000))
+        console.log(getCentury(3000))
+        console.log(getCentury(3001))
+        console.log(getCentury(1980))
+        console.log(getCentury(2001))
+    </script>
+</body>
+</html>
