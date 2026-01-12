@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// Написать чистую функцию, эффективно удаляющую из переданной ей строки все начальные и конечные пробелы.
+
+function removeSpace(str) {
+    let start = 0;
+    for (; start < str.length; start++) {
+        if (str[start] !== ' ') {
+            break;
+        }
+    }
+    
+    if (start === str.length) {
+        return '';
+    }
+    
+    let end = str.length - 1;
+    for (; end >= 0; end--) {
+        if (str[end] !== ' ') {
+            break;
+        }
+    }
+  
+    return str.substring(start, end + 1);
+}
+
+
+const input = prompt("Введите строку с пробелами:");
+const result = removeSpace(input);
+console.log(`Результат: [${result}]`);
+
+  </script>
+  
+</body>
+</html>
