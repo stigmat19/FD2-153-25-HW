@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3+</title>
+</head>
+
+<body>
+    <script>
+        let str;
+        do {
+            str = prompt('Введите текст для проверки на полидром');
+        } while (str === '');
+
+        function polidrom(str) {
+
+            str1 = str.toLowerCase().replace(/[^a-zа-яё]/g, '');
+
+            let start = 0;
+            let end = str1.length - 1;
+            while (start < end) {
+                if (str1[start] !== str1[end]) {
+                    if (!((str1[start] === 'ъ' && str1[end] === 'ь') ||
+                        (str1[start] === 'ь' && str1[end] === 'ъ')))
+                        return false;
+                }
+                start++;
+                end--;
+            }
+            return true;
+        }
+
+        if (polidrom(str)) {
+            alert(`Введенный текст "${str}" - ПАЛИНДРОМ!`)
+        } else {
+            alert(`Введенный текст "${str}" - НЕ ПАЛИНДРОМ!`)
+        }
+    </script>
+</body>
+
+</html>
