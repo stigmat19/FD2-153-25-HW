@@ -18,21 +18,20 @@
 
             let str1 = str.toLowerCase().replace(/[^a-zа-яё]/g, '');
 
-            if (str1 <= 1) {
+            if (str1.length <= 1) {
                 return true;
             }
 
             let start = 0;
             let end = str1.length - 1;
-            while (start < end) {
-                if (str1[start] !== str1[end]) {
-                    if (!((str1[start] === 'ъ' && str1[end] === 'ь') ||
-                        (str1[start] === 'ь' && str1[end] === 'ъ')))
-                        return false;
+
+            if (str1[start] !== str1[end]) {
+                if (!((str1[start] === 'ъ' && str1[end] === 'ь') ||
+                    (str1[start] === 'ь' && str1[end] === 'ъ'))) {
+                    return false;
                 }
-                start++;
-                end--;
             }
+
             return polidrom(str1.slice(1, -1));
         }
 
