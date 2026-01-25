@@ -11,12 +11,12 @@
     <script>
         let str;
         do {
-            str = prompt('Введите текст для проверки на полидром');
-        } while (str === '');
+            str = prompt('Введите текст для проверки на палиндром');
+        } while (str === '' || str === null);
 
         function polidrom(str) {
 
-            str1 = str.toLowerCase().replace(/[^a-zа-яё]/g, '');
+            let str1 = str.toLowerCase().replace(/[^a-zа-яё]/g, '');
 
             let start = 0;
             let end = str1.length - 1;
@@ -33,9 +33,9 @@
         }
 
         if (polidrom(str)) {
-            alert(`Введенный текст "${str}" - ПАЛИНДРОМ!`)
+            alert(`Введенный текст "${str}" - ПАЛИНДРОМ!`);
         } else {
-            alert(`Введенный текст "${str}" - НЕ ПАЛИНДРОМ!`)
+            alert(`Введенный текст "${str}" - НЕ ПАЛИНДРОМ!`);
         }
     </script>
 </body>
